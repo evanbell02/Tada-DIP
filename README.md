@@ -1,6 +1,6 @@
 # Tada-DIP: Input-adaptive Deep Image Prior for One-shot 3D Image Reconstruction
 
-This repository contains code to reproduce the main results of the paper "Tada-DIP: Input-adaptive Deep Image Prior for One-shot 3D Image Reconstruction," as presented at the 2025 Asilomar Conf. on Signals, Systems, and Computers.
+This repository contains code to reproduce the main results of the paper "Tada-DIP: Input-adaptive Deep Image Prior for One-shot 3D Image Reconstruction," as presented at the 2025 Asilomar Conference on Signals, Systems, and Computers.
 
 ![Tada-DIP Setup](figs/TadaDIPSetup.png)
 
@@ -10,7 +10,7 @@ The data used for evaluating each of the methods comes from the 2016 AAPM Low Do
 ### Image reconstruction with Tada-DIP
 The main results of the paper can reproduced by running `scripts/tada-dip.py`, being sure to set appropriate file paths for the data to be loaded and results to be saved. The three volumes we used for evaluation were `L067`, `L096`, and `L143`.
 
-### Baselines
+### Implementation of baseline methods
 
 **FBP.**&nbsp;&nbsp;&nbsp;&nbsp;We computed the FBP using LEAP, which is implemented in our code with the `A_pinv` method of the `physics.PBCT` class for parallel beam reconstruction.
 
