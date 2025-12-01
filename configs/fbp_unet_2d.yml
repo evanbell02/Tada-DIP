@@ -1,0 +1,29 @@
+seed_everything: 123
+
+trainer:
+  max_epochs: 5000
+  logger:
+    class_path: lightning.pytorch.loggers.TensorBoardLogger
+    init_args:
+      save_dir: .
+
+data:
+  class_path: src.datasets.svct_slice_dataset.SVCTSliceDataModule
+  init_args:
+    data_path: /home/share/collab_share/AAPM_FBP/30_views_slices/
+    batch_size: 64
+    num_workers: 16
+
+model:
+  class_path: src.models.fbp_unet.FBPUNet
+  init_args:
+    depth: 4
+    base_filters: 64
+    dim: 2
+    norm: 'batch'
+
+
+optimizer:
+  class_path: torch.optim.Adam
+  init_args:
+    lr: 1e-4

@@ -21,4 +21,5 @@ dependencies:
     - torch
     - torchvision
     - lightning
+    - jsonargparse[signatures]
     - pydicom
