@@ -9,3 +9,8 @@ The data used for evaluating each of the methods comes from the 2016 AAPM Low Do
 
 ### Image reconstruction with Tada-DIP
 The main results of the paper can reproduced by running `scripts/tada-dip.py`, being sure to set appropriate file paths for the data to be loaded and results to be saved. The three volumes we used for evaluation were `L067`, `L096`, and `L143`. The same script can also be used to run Vanilla DIP experiments with the hyperparameters set as $\alpha=\beta=\gamma=0$.
+
+### Baselines
+For the total variation baseline, we used the ASD-POCS routine, as [implemented in LEAP](https://leapct.readthedocs.io/en/stable/iterative_reconstruction.html#leapctype.tomographicModels.ASDPOCS), with `numIter=500, numSubsets=30, numTV=50`.
+
+The supervised baseline is a 2D U-Net, which was trained using the complete Mayo Clinic/AAPM CT dataset available at the [Cancer Imaging Archive](https://www.cancerimagingarchive.net/collection/ldct-and-projection-data/). The exact training configurations are included in the `configs` folder. For training, the data should be processed using the `process_data.py` and `make_fbp_dataset.py` scripts. Then, model training proceeds using the PyTorch Lightning command line interface. For example, to train the model for 15 view reconstruction, one should run `python scripts/train.py fit -c configs/fbp_unet_2d_15_views.yml`. We also release pretrained model checkpoints for both 15 view and 30 view reconstruction [here](https://drive.google.com/drive/folders/1GTdhKCWNNFwO_VaMyBz953VaCNYiG4pt?usp=sharing). The pretrained models can be loaded with `FBPUNet.load_from_checkpoint('checkpoint_path.ckpt', map_location='cpu')` after importing `FBPUNet` from `src.models.fbp_unet`.
