@@ -1,6 +1,6 @@
 # Tada-DIP: Input-adaptive Deep Image Prior for One-shot 3D Image Reconstruction
 
-This repository contains code to reproduce the main results of the paper ["Tada-DIP: Input-adaptive Deep Image Prior for One-shot 3D Image Reconstruction,"](https://arxiv.org/abs/2512.03962) as presented at the 2025 Asilomar Conference on Signals, Systems, and Computers.
+This repository contains code to reproduce the main results of the paper [Tada-DIP: Input-adaptive Deep Image Prior for One-shot 3D Image Reconstruction,](https://arxiv.org/abs/2512.03962) as presented at the 2025 Asilomar Conference on Signals, Systems, and Computers.
 
 ![Tada-DIP Setup](figs/TadaDIPSetup.png)
 
